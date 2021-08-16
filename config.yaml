@@ -1,0 +1,11 @@
+synth_set: "02691156"
+checkpoint_dir: ./
+inp_dir: data/tf_records
+gt_pc_dir: data/gt/downsampled
+eval_split: test
+eval_unsupervised_shape: true
+vox_size: 32
+pc_gauss_kernel_size: 21
+pc_relative_sigma: 3.0
+pc_num_points: 2000
+pc_point_dropout: 0.07
