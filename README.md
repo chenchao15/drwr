@@ -9,8 +9,9 @@
 
 ### Install dependencies
 
-
 ## Citation
+
+If you find this project useful in your research, please consider citing:
 
 ```
 @inproceedings{handrwr2020,
