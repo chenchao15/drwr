@@ -1,5 +1,18 @@
 # DRWR: A Differentiable Renderer without Rendering for Unsupervised 3D Structure Learning from Silhouette Images
-[paper](https://arxiv.org/pdf/2007.06127.pdf)
+This is the code of  [DRWR: A Differentiable Renderer without Rendering for Unsupervised 3D Structure Learning from Silhouette Images](https://arxiv.org/pdf/2007.06127.pdf), a paper at ICML2020
+
+## Citation
+
+If you find this project useful in your research, please consider citing:
+
+```
+@inproceedings{handrwr2020,
+  author = {Zhizhong Han and Chao Chen and Yu-Shen Liu and Matthias Zwicker},
+  title = {{DRWR}: A Differentiable Renderer without Rendering for Unsupervised 3{D} Structure Learning from Silhouette Images},
+  booktitle = {International Conference on Machine Learning},
+  year = {2020},
+}
+```
 
 ![show1](overview/show1.png)
 
@@ -28,7 +41,7 @@ we evaluate our method using [ShapeNet v1](https://www.shapenet.org/) for all ex
 
 The original ShapeNet has no corresponding point clouds and rendered images. Therefore, we need to preprocess 3D meshes to obtain point clouds and rendered images.
 
-We provide the same point clouds and rendered images of 3 classes(chair, plane, and car) used in our paper as [DPC](https://arxiv.org/abs/1810.09381), you can download them by the [link](https://drive.google.com/drive/folders/11EklwTGDShlvV9_631lo-WjL_QFgS1dk), which contains `gt/` and `render/`. the point clouds are only for test. You can also generate ground truth point clouds yourself as described [here](https://github.com/chenchao15/2D_projection_matching/blob/main/2Dpm/densify/README.md).
+We provide the same point clouds and rendered images of 3 classes(chair, plane, and car) used in our paper as [DPC](https://arxiv.org/abs/1810.09381), you can download them by the [link](https://drive.google.com/drive/folders/11EklwTGDShlvV9_631lo-WjL_QFgS1dk), which contains `gt/` and `render/`. the point clouds are only for test. You can also generate ground truth point clouds yourself as described [here](https://github.com/chenchao15/drwr/blob/main/drwr/densify/README.md).
 
 Firstly, put the `gt/` folder and the  `render/` folder into the `data/` folder.
 
@@ -55,7 +68,7 @@ python drwr/scripts/train_eval.py --gpu=0 --synth_set=02691156 --checkpoint_dir=
 
 All trained models will be saved in checkpoint_dir.
 
-See the configurations in **2Dpm/resources/default_config.yaml** for more details.
+See the configurations in **drwr/resources/default_config.yaml** for more details.
 
 ## Test
 
@@ -68,17 +81,4 @@ After the test, we save the quantification results in **checkpoint_dir/result.tx
 ## Acknowledgements
 
 We thank [DPC](https://arxiv.org/abs/1810.09381) for their great works and repos.
-
-## Citation
-
-If you find this project useful in your research, please consider citing:
-
-```
-@inproceedings{handrwr2020,
-  author = {Zhizhong Han and Chao Chen and Yu-Shen Liu and Matthias Zwicker},
-  title = {{DRWR}: A Differentiable Renderer without Rendering for Unsupervised 3{D} Structure Learning from Silhouette Images},
-  booktitle = {International Conference on Machine Learning},
-  year = {2020},
-}
-```
 
